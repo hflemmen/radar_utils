@@ -51,7 +51,7 @@ class PolarScan:
                 img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
         else:
             img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
-        path = img_path.split('.')[0]
+        path = ".".join(img_path.split('.')[:-1])
 
         with open(path + ".txt", 'r') as f:
             f.readline()
