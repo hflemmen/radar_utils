@@ -37,7 +37,7 @@ class PolarScan:
                          clockwise=self.clockwise)
 
     @staticmethod
-    def load(img_path, use_cache=False):
+    def load(img_path, use_cache=False, clockwise=False):
         img = None
         filepath = '/'.join(img_path.split('/')[:-1])
         filename = img_path.split('/')[-1]
@@ -73,7 +73,7 @@ class PolarScan:
             azimuths.append(azimuth_radians)
 
         scan = PolarScan(img_path, sample_size, len(lines), range_scales, range_scale_lengths, timestamps, azimuths,
-                         pose, img)
+                         pose, img, clockwise)
         if radar_interference_filter_done or not use_cache:
             return scan
         else:
