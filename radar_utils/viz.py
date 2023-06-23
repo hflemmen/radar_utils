@@ -155,7 +155,6 @@ class TrajectoryVisualizer:
             cv2.imshow("Trajectory", viz_rgb)
         vis_szcan = data.scan_rn.copyMeta()
         vis_szcan.img = viz_rgb
-        disp_pol(vis_szcan)
         return viz_rgb
 
     def draw_gt_trajectory(self, mask, data: UpdateStepData, scan: EuclideanScan, window_size: int,
